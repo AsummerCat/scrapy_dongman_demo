@@ -65,8 +65,15 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'scrapy_dongman_demo.pipelines.ScrapyDongmanDemoPipeline': 1,
+   'scrapy_dongman_demo.pipelines.ScrapyDongmanDemoPipeline': 200,
+   # 下载图片
+   'scrapy_dongman_demo.pipelines.ImagesspiderPipeline': 300,
 }
+
+# # 定义图片的保存路径
+IMAGES_STORE = 'E:\动漫图'
+# 定义接受图片的变量
+IMAGES_URLS_FIELD = 'down_path'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

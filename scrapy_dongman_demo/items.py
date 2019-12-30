@@ -25,3 +25,5 @@ class ScrapyDongmanDemoItem(scrapy.Item):
     pic_url = scrapy.Field()
     # 详细页图片下载地址
     down_path = scrapy.Field()
+    # 下载电脑的地址
+    info_down_path = scrapy.Field()

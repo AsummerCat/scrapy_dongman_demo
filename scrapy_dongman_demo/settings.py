@@ -72,8 +72,6 @@ ITEM_PIPELINES = {
 
 # # 定义图片的保存路径
 IMAGES_STORE = 'E:\动漫图'
-# 定义接受图片的变量
-IMAGES_URLS_FIELD = 'down_path'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

@@ -4,6 +4,8 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import base64
+import random
 
 from scrapy import signals
 
@@ -101,3 +103,23 @@ class ScrapyDongmanDemoDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+'''
+ip代理
+https://www.kuaidaili.com/free/intr/
+https://www.xicidaili.com/nn/
+'''
+
+
+class my_proxy(object):
+    def process_request(self, request, spider):
+        # 代理服务器
+        request.meta['proxy'] = 'http://' + '221.229.252.98:9797'
+        # request.meta['proxy'] = 'http://124.237.83.14:9999'
+        # 代理服务器用户名密码 :分隔
+    # proxy_name_pass = b'H211EATS905745KC:F8FFBC929EB7D5A7'
+    # 用户名密码加密
+    # encode_pass_name = base64.b64encode(proxy_name_pass)
+    # 设置http头
+    # request.headers['Proxy-Authorization'] = 'Basic ' + encode_pass_name.decode()

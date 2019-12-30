@@ -123,3 +123,20 @@ class my_proxy(object):
     # encode_pass_name = base64.b64encode(proxy_name_pass)
     # 设置http头
     # request.headers['Proxy-Authorization'] = 'Basic ' + encode_pass_name.decode()
+
+
+'''
+随机user_agent
+https://www.jianshu.com/p/8e115373b101
+'''
+
+
+class my_user_agent(object):
+    pcUserAgent = [
+        "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50",
+        "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0",
+        "Opera/9.80 (Windows NT 6.1; U; en) Presto/2.8.131 Version/11.11"
+    ]
+
+    def process_request(self, request, spider):
+        request.headers['User_Agent'] = random.choice(self.pcUserAgent)

@@ -52,10 +52,12 @@ ROBOTSTXT_OBEY = False
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 
-# 开启代理
 DOWNLOADER_MIDDLEWARES = {
    # 'scrapy_dongman_demo.middlewares.ScrapyDongmanDemoDownloaderMiddleware': 543,
-   'scrapy_dongman_demo.middlewares.my_proxy': 543,
+    # 开启代理
+   'scrapy_dongman_demo.middlewares.my_proxy': 544,
+    #伪装user_agent
+   'scrapy_dongman_demo.middlewares.my_user_agent': 545,
 }
 
 # Enable or disable extensions
